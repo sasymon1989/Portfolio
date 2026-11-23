@@ -1,0 +1,575 @@
+/* Author:      Sonja Walsh Student # W0157126 */
+/* Created:     September, 14/2026 */
+
+/* CSS VARIABLES */
+
+:root {
+    --primary-blue: #0A5A7A;
+    --primary-purple: darkslateblue;
+    --accent-pink: #EEAECA;
+    --accent-rose: palevioletred;
+    --accent-blue: cadetblue;
+    --background: #f8f9fa;
+    --white: #ffffff;
+    --text: #222222;
+}
+
+
+/* WEBSITE STYLES */
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.page-content {
+    background: #57bade;
+    background: radial-gradient(circle, rgba(87, 186, 222, 1) 0%, rgba(237, 145, 145, 1) 50%, rgba(255, 233, 161, 1) 100%);
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+
+/* HERO / HEADER */
+
+#hero {
+    min-height: 1vh;
+    width: 100%;
+    background-position: center;
+    background-color: white;
+    margin: 0;
+}
+
+#nameHolder {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#nameHolder img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* HEADINGS */
+
+h1,
+h2,
+h3 {
+    font-family: 'Caveat', Arial, sans-serif;
+    color: var(--primary-blue);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 1.3rem;
+    color: var(--primary-blue);
+}
+
+
+/* CONTENT */
+
+.content {
+    max-width: 75ch;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.content div {
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* NAVIGATION - DESKTOP */
+
+.desktopMenu {
+    display: none;
+    background-color: var(--primary-purple);
+    overflow: hidden;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 20px;
+}
+
+.desktopMenu a {
+    color: var(--accent-pink);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Caveat', Arial, sans-serif;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.desktopMenu a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.desktopMenu a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 50%;
+    bottom: 5px;
+    background-color: var(--accent-pink);
+    transition: all 0.3s ease;
+}
+
+.desktopMenu a:hover::after {
+    width: 80%;
+    left: 10%;
+}
+
+
+/* NAVIGATION - MOBILE */
+
+#hamburger {
+    border: 1px solid white;
+    background-color: var(--primary-purple);
+    height: 3rem;
+    width: 3rem;
+    margin: 10px auto;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+    z-index: 20;
+}
+
+.hamline {
+    width: 80%;
+    height: 2px;
+    border: none;
+    margin: 3px 0;
+    background-color: white;
+}
+
+#mobileMenu {
+    position: relative;
+    background-color: #333;
+    z-index: 10;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+#mobileMenu a {
+    display: block;
+    color: var(--accent-pink);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Playwrite', Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+#mobileMenu a:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* SECTION LAYOUT */
+
+#Experience,
+#Education,
+#Projects,
+#Skills,
+#About,
+#Contact {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(50px, 8vw, 100px) 30px;
+    font-size: clamp(1rem, 1vw + 0.6rem, 1.2rem);
+}
+
+#Experience,
+#Education,
+#Projects,
+#Contact {
+    max-width: 900px;
+}
+
+
+/* SECTION DIVIDERS */
+
+hr.rounded {
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+    border-top: 8px solid var(--accent-rose);
+    border-radius: 5px;
+}
+
+
+/* PROFILE IMAGE */
+
+.imagesize {
+    display: block;
+    width: min(400px, 90%);
+    height: auto;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* PROJECTS */
+
+#slider {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/*figure contains the object*/
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0; /*so we don't see the other image next to it */
+    animation: slider 30s infinite; /*never stops */
+}
+
+#slider figure img {
+    float: left;
+    width: 20%; /* Because if we divide 100% by 20 we get 5 this is so the slide will take up the whole screen*/
+}
+
+@keyframes slider {
+
+    0%,
+    20% {
+        left: 0;
+    }
+
+    25%,
+    45% {
+        left: -100%;
+    }
+
+    50%,
+    70% {
+        left: -200%;
+    }
+
+    75%,
+    95% {
+        left: -300%;
+    }
+
+    100% {
+        left: -400%;
+    }
+}
+
+
+/* SKILLS SECTION */
+
+.skillset {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.skillset div {
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.thumbnail {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.opticalskills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.opticalskills div {
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* ABOUT SECTION */
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.container div {
+    flex: 1 1 300px;
+    background-color: var(--white);
+    margin: 0;
+    padding: 25px;
+    font-size: 15px;
+    text-align: left;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+}
+
+.aboutimages {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* SLEEPY CAT */
+
+#sleepycat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 20px;
+}
+
+
+/*CONTACT BUTTON*/
+
+.contact-button {
+    display: block;
+    width: fit-content;
+    margin: 40px auto;
+    padding: 12px 25px;
+    background-color: darkslateblue;
+    color: #EEAECA;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Caveat', Arial, sans-serif;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+
+/* FOOTER */
+
+#footer {
+    background-color: darkslateblue;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+#footer h2 {
+    color: #EEAECA;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#footer p {
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.footer-links a,
+.back-to-top {
+    color: #EEAECA;
+    text-decoration: none;
+    font-family: 'Caveat', Arial, sans-serif;
+    font-size: 1.5rem;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover,
+.back-to-top:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.back-to-top {
+    display: inline-block;
+    margin: 15px 0 25px;
+}
+
+#footer hr {
+    width: 80%;
+    border: 0;
+    border-top: 1px solid #EEAECA;
+    margin: 20px auto;
+}
+
+#footer .copyright {
+    font-size: 0.85rem;
+    color: #ddd;
+    margin: 5px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 599px) {
+
+    #nameHolder {
+        width: 100%;
+        min-height: 100px;
+        padding: 10px 20px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin: 0;
+        padding: 5px;
+    }
+
+    #Experience,
+    #Education,
+    #Projects,
+    #Skills,
+    #About,
+    #Contact {
+        padding: 50px 20px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container div {
+        width: 100%;
+    }
+
+    .skillset {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .opticalskills {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .imagesize {
+        width: 80%;
+    }
+
+    .desktopMenu {
+        display: none;
+    }
+}
+
+
+/* TABLET AND DESKTOP */
+
+@media (min-width: 600px) {
+
+    #mobileMenu,
+    #hamburger {
+        display: none;
+    }
+
+    .desktopMenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content {
+        max-width: 75ch;
+    }
+}
+
+
+/* CUSTOM FONT */
+
+@font-face {
+    font-family: 'Playwrite';
+    src: url(Playwrite/Playwrite.ttf);
+}
